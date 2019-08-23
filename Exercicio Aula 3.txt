@@ -3,13 +3,13 @@ create database Filme;
 use Filme;
 
 Create table Filmes(
-idFilme int primary key autoencrement,
+idFilme int primary key auto_increment,
 titulo varchar (40),
 genero varchar(40),
 diretor varchar(40)
 );
 
-select * from Filme;
+select * from Filmes;
 
 insert into Filmes (titulo,genero,diretor) values 
 ('matrix','ação','Lana Wachowski');
@@ -35,37 +35,37 @@ insert into Filmes (titulo,genero,diretor) values
 
 update Filmes set diretor = 'Allan' where idFilme = 5;
 
-update Filmes set diretor = 'Marvel Bro' where idFilme = 6, idFilme = 11 limit 2;
+update Filmes set diretor = 'Marvel Bro' where idFilme = 6 and idFilme = 11 limit 2;
 
-update Filmes set genero = 'Ação' where idFilmes = 4, idFilmes = 9 limit 2;
+update Filmes set genero = 'Ação' where idFilme = 4 and idFilme = 9 limit 2;
 
-update Filmes set genero = 'Luta' where idFilmes = 5, idFilmes = 6 limit 2;
-
-select * from Filmes;
-
-update Filmes set genero = 'Romance' where idFilmes = 2, idFilmes = 11 limit 2;
-
-update Filmes set diretor = 'Sr Cage' where idFilmes = 2;
-
-update Filmes set diretor = 'Sr Cage', genero = 'aventura' where idFilmes = 3;
-
-update Filmes set diretor = 'Daniels', genero = 'Luta' where idFilmes = 7;
-
-update Filmes set diretor = 'Lula', genero = 'Corrida' where idFilmes = 8;
+update Filmes set genero = 'Luta' where idFilme = 5 and idFilme = 6 limit 2;
 
 select * from Filmes;
 
-delete from Filmes where idFilmes = 6;
+update Filmes set genero = 'Romance' where idFilme = 2 and idFilme = 11 limit 2;
 
-delete from Filmes where idFilmes = 11 , idFilmes = 5;
+update Filmes set diretor = 'Sr Cage' where idFilme = 2;
+
+update Filmes set diretor = 'Sr Cage', genero = 'aventura' where idFilme = 3;
+
+update Filmes set diretor = 'Daniels', genero = 'Luta' where idFilme = 7;
+
+update Filmes set diretor = 'Lula', genero = 'Corrida' where idFilme = 8;
+
+select * from Filmes;
+
+delete from Filmes where idFilme = 6;
+
+delete from Filmes where idFilme = 11 and idFilme = 5;
 
 Alter table Filmes  add ano int;
 
 select * from Filmes;
 
-Alter table Filmes where titulo varchar(50);
+Alter table Filmes modify column titulo varchar(50);
 
-describle Filmes;
+describe Filmes;
 
 delete from Filmes where ano;
 
