@@ -47,4 +47,30 @@ update Filmes set genero = 'Romance' where idFilmes = 2, idFilmes = 11 limit 2;
 
 update Filmes set diretor = 'Sr Cage' where idFilmes = 2;
 
------Continuar
+update Filmes set diretor = 'Sr Cage', genero = 'aventura' where idFilmes = 3;
+
+update Filmes set diretor = 'Daniels', genero = 'Luta' where idFilmes = 7;
+
+update Filmes set diretor = 'Lula', genero = 'Corrida' where idFilmes = 8;
+
+select * from Filmes;
+
+delete from Filmes where idFilmes = 6;
+
+delete from Filmes where idFilmes = 11 , idFilmes = 5;
+
+Alter table Filmes  add ano int;
+
+select * from Filmes;
+
+Alter table Filmes where titulo varchar(50);
+
+describle Filmes;
+
+delete from Filmes where ano;
+
+select * from Filmes order by titulo;
+
+select * from Filmes order by diretor;
+
+select * from Filmes order by diretor, titulo;
