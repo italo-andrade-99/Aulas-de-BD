@@ -1,0 +1,42 @@
+use adsA;
+   
+create table Aluno(
+id_aluno int primary key auto_increment,
+ra int,
+nome_aluno varchar (50),
+telefone varchar (13)
+);
+
+create table  curso(
+id_curso int primary key auto_increment,
+nome_curso varchar(40),
+carg_hr varchar (20),
+cod_curso int
+);
+
+insert into Aluno values(null,004,'Allan Martins','9837247');
+
+insert into curso values(null,'Redes', '5 horas',3);
+
+select * from aluno;
+select * from curso;
+
+alter table Aluno add column fk_curso int;
+
+describe Aluno;
+update aluno set fk_curso = 3 where id_aluno = 2;
+select * from Aluno as al, curso as cr where al.fk_curso = cr.id_curso;
+
+create table Disciplina (
+id_disc int primary key auto_increment,
+nome_disc varchar (40),
+qtdhr int,
+fk_curso int,
+foreign key(fk_curso)references curso(id_curso)
+) auto_increment = 1000;
+
+insert into Disciplina values (null, 'SE', 2,2);
+
+select * from Disciplina;
+
+select nome_curso, nome_disc from Disciplina as dis, curso as co where co.id_curso = dis.fk_curso;
